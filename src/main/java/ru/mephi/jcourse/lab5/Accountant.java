@@ -21,22 +21,11 @@ public class Accountant {
 
     public static void paySalary (Employee employee) {
         int salary = getSalary(employee);
-        System.out.println("salary " + salary + " paid to " + employee);
+        System.out.println("salary " + salary + " paid to " + employee.getGivenName() + " " + employee.getSurName());
     }
 
     public static void payPremium (Employee employee) {
-        int premiun = getSalary(employee);
-        switch (employee.getRole()) {
-            case STAFF:
-                premiun = premiun * 10 / 100;
-                break;
-            case MANAGER:
-                premiun = premiun * 20 / 100;
-                break;
-            case EXECUTIVE:
-                premiun = premiun * 30 / 100;
-                break;
-        }
-        System.out.println("premium " + premiun + " paid to " + employee);
+        int premium = getSalary(employee);
+        System.out.println("premium " + premium*employee.getRole().getMult() + " paid to " + employee.getGivenName() + " " + employee.getSurName());
     }
 }

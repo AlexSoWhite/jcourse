@@ -25,7 +25,7 @@ public class Main {
             switch (choice) {
                 case 1:
                     list.stream()
-                            .filter(employee -> employee.getGender() == Employee.Gender.FEMALE)
+                            .filter(employee -> Objects.equals(employee.getGender(), Gender.FEMALE))
                             .forEach(Accountant::payPremium);
                     break;
                 case 2:
@@ -42,12 +42,12 @@ public class Main {
                     break;
                 case 4:
                     list.stream()
-                            .filter(employee -> employee.getRole() == Employee.Role.MANAGER)
+                            .filter(employee -> Objects.equals(employee.getRole(), Role.MANAGER))
                             .forEach(Accountant::paySalary);
                     break;
                 case 5:
                     list.stream()
-                            .filter(employee -> employee.getRole() == Employee.Role.STAFF)
+                            .filter(employee -> Objects.equals(employee.getRole(), Role.STAFF))
                             .forEach(Accountant::payPremium);
                     break;
                 case 6:
@@ -58,5 +58,6 @@ public class Main {
                     break;
             }
         }
+        //LambdaProg.simulate();
     }
 }

@@ -3,15 +3,6 @@ package ru.mephi.jcourse.lab5;
 import java.util.ArrayList;
 
 public class Employee {
-    enum Gender{
-        MALE,
-        FEMALE
-    }
-    enum Role{
-        STAFF,
-        MANAGER,
-        EXECUTIVE
-    }
     private String givenName;
     private String surName;
     private int age;
@@ -25,7 +16,7 @@ public class Employee {
     private String state;
     private int code;
 
-    public Employee() {
+    private Employee() {
 
     }
 
@@ -78,6 +69,7 @@ public class Employee {
     }
 
     public static class Builder {
+
         private String givenName;
         private String surName;
         private int age;
